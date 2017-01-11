@@ -37,7 +37,7 @@ router.get('/new/:url(*)', function (req, res, next) {
     var newLink = function (db, callback) {
             collection.findOne({ "url": params }, { short: 1, _id: 0 }, function (err, doc) {
         if (doc != null) {
-            res.json({ original_url: params, short_url: local + doc.short });
+            res.json({ original_url: params, short_url: local + '/' + doc.short });
           } else {
         if (validUrl.isUri(params)) {
             // if URL is valid, do this
