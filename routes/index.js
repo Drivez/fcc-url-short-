@@ -44,7 +44,7 @@ router.get('/new/:url(*)', function (req, res, next) {
             var shortCode = shortid.generate();
             var newUrl = { url: params, short: shortCode };
             collection.insert([newUrl]);
-            res.json({ original_url: params, short_url: local + shortCode });
+            res.json({ original_url: params, short_url: local + '/' + doc.short });
             } else {
             // if URL is invalid, do this
             res.json({ error: "This does not look like a valid URL, try again." });

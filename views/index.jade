@@ -1,5 +1,30 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1.jumbotron.text-center API: URL Shortener
+      |     
+      h3 By Marius Kildedal
+      |     
+      blockquote
+        | User Stories:
+        ol
+          li
+            |  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+          |             
+          li
+            | If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+          |             
+          li
+            | When I visit that shortened URL, it will redirect me to my original link.
+      |     
+      h2 Example usage:
+      |     
+      code https://fcc-url-short-drivez.herokuapp.com/new/http://www.vg.no
+      |     
+      h2 Example output:
+      |     
+      code 
+      | {
+      | original_url: &quot;http://www.vg.no&quot;,
+      | short_url: &quot;fcc-url-short-drivez.herokuapp.comrJInODmUg&quot;
+      | }
